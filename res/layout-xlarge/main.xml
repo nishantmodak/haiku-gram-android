@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://www.gueei.com/android-binding/"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        binding:text="FORMAT('Currently Loaded: %s', Loaded)"
+        />
+    <GridView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:numColumns="5"
+        android:horizontalSpacing="10dip"
+        android:verticalSpacing="10dip"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        binding:assign="{prop=ItemsPerLoad, value=70}"
+        binding:adapter="STITCH(
+        	ADAPTER({source=LocationList, template=@layout/list_item}),
+        	SECTION(., @layout/load_more_item)
+        )"
+        />
+</LinearLayout>

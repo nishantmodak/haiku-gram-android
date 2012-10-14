@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://www.gueei.com/android-binding/"
+    xmlns:panel="http://schemas.android.com/apk/res/org.panel"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        binding:adapter="STITCH(
+        	ADAPTER({source=LocationList, template=@layout/list_item}),
+        	SECTION(., @layout/load_more_item)
+        )" />
+
+</LinearLayout>
